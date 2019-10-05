@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Survival Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' type='text/css' href = 'css/style.css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Who will Survive</h1>
+	<p>The sinking of the Titanic is one of the most infamous shipwrecks in history.
+
+On April 15, 1912, during her maiden voyage, the widely considered “unsinkable” RMS Titanic sank after colliding with an iceberg. Unfortunately, there weren’t enough lifeboats for everyone onboard, resulting in the death of 1502 out of 2224 passengers and crew.
+
+While there was some element of luck involved in surviving, it seems some groups of people were more likely to survive than others<p>
+
+	<p>Pclass range is 1 to 3
+	   <br>SibSp is 0 or 1
+	   <br>Parch is 0 or 1
+           <br>sex_male is 0 or 1
+	   <br>Ticket_CA is 0 or 1
+	   <br>Ticket_F is 0 or 1
+	   <br>Ticket_G is 0 or 1
+           <br>Ticket_PC is 0 or 1
+	   <br>Ticket_S is 0 or 1
+	   <br>Ticket_SOC is 0 or 1
+	   <br>Ticket_T is 0 or 1
+	   <br>Embarked_Q is 0 or 1
+	   <br>Embarked_S is 0 or 1
+	<p>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Pclass" placeholder="Pclass" required="required" />
+        <input type="text" name="Age" placeholder="Age" required="required" />
+	<input type="text" name="SibSp" placeholder="SibSp" required="required" />
+        <input type="text" name="Parch" placeholder="Parch" required="required" />
+        <input type="text" name="Fare" placeholder="Fare" required="required" />
+	<input type="text" name="Sex_male" placeholder="Sex_male" required="required" />
+        <input type="text" name="Ticket_CA" placeholder="Ticket_CA" required="required" />
+        <input type="text" name="Ticket_F" placeholder="Ticket_F" required="required" />
+	<input type="text" name="Ticket_G" placeholder="Ticket_G" required="required" />
+	<input type="text" name="Ticket_P" placeholder="Ticket_P" required="required" />
+	<input type="text" name="Ticket_PC" placeholder="Ticket_PC" required="required" />
+	<input type="text" name="Ticket_S" placeholder="Ticket_S" required="required" />
+        <input type="text" name="Ticket_SOC" placeholder="Ticket_SOC" required="required" />
+        <input type="text" name="Ticket_T" placeholder="Ticket_T" required="required" />
+	<input type="text" name="Embarked_Q" placeholder="Embarked_Q" required="required" />
+	<input type="text" name="Embarked_S" placeholder="Embarked_S" required="required" />
+	
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+	
+ 
+   <br><p>Created By Shriyash Shende<p>		
+ </div>
+
+
+</body>
+</html>
